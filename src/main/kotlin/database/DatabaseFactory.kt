@@ -11,7 +11,7 @@ object DatabaseFactory {
     fun init() {
         val driver = "org.postgresql.Driver"
         val url = "jdbc:postgresql://localhost:5432/kotlin-grpc"
-        val databasePassword = ""
+        val databasePassword = "2lbvfybr2"
         val user = "postgres"
 
         val database = Database.connect(url, driver, user, databasePassword)

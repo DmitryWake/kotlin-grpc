@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+message User {
+  string lastname = 1;
+  string firstname = 2;
+  string middlename = 3;
+  uint32 age = 4;
+  Gender gender = 5;
+
+  enum Gender {
+    MALE = 0;
+    FEMALE = 1;
+  }
+}
+
+message Result {
+  bool succeeded = 1;
+  string error = 2;
+  string message = 3;
+}
+
+message PaggingUsersResult{
+  repeated User users = 1;
+  string error = 3;
+}
+
+message PaggingRequest {
+  uint32 pageLength = 1;
+  uint32 pageNum = 2;
+}
+
+message Id {
+  uint32 id = 1;
+}
+
+service UserService {
+  rpc get(Id) returns (User);
+  rpc insert(User) returns (Result);
+  rpc delete(Id) returns (Result);
+  rpc getPagging(PaggingRequest) returns (PaggingUsersResult);
+}

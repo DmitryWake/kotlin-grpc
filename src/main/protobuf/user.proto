@@ -26,7 +26,7 @@ message PaggingUsersResult{
 
 message PaggingRequest {
   uint32 pageLength = 1;
-  uint32 pageNum = 2;
+  uint64 pageNum = 2;
 }
 
 message Id {

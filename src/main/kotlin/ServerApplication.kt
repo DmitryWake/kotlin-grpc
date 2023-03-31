@@ -3,13 +3,12 @@ import io.grpc.Server
 import io.grpc.ServerBuilder
 import service.UserService
 
-private const val SERVER_PORT = 50051
+const val SERVER_PORT = 50051
 
 fun main() {
     DatabaseFactory.init()
 
     println("Building Server...")
-
     val server = buildServer()
 
     println("Starting Server...")
